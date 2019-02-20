@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container-fluid">
+      <div class="wrapper">
+        <canvas class="chart"></canvas>
+      </div>
+      <h3>{{ isDetails }}</h3>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {getOSDetails} from './window.js';
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+  data: function() {
+      return {
+        isDetails: getOSDetails()
+      }
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app .container-fluid {
+    height: 100%;
+    color: white;
+    background-color: #111;
+  }
+  
+  #app {
+    -webkit-app-region: drag;
+  }
+  
+  .container-fluid {
+    padding: 25px;
+  }
+
+  .wrapper {
+    height: 300px !important;
+  }
+
+  h3 {
+    text-align: center;
+  }
 </style>

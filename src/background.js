@@ -15,7 +15,19 @@ let win
 protocol.registerStandardSchemes(['app'], { secure: true })
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600 })
+  win = new BrowserWindow({ 
+    // frame: false,
+    // Set the initial width to 500px 
+    width: 550,
+    // Set the initial height to 400px
+    height: 450,
+    // set the title bar style
+    titleBarStyle: 'hiddenInset',
+    // set the background color to black
+    backgroundColor: "#111",
+  })
+
+  win.setMenu(null)
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
