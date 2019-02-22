@@ -1,5 +1,7 @@
 # vue-electron
 
+![alt text](README.screenshot.png "Screenshot")
+
 ## Project setup
 ```
 npm install

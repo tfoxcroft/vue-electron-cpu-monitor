@@ -12,8 +12,7 @@ function setLastMeasureTimes(cpus) {
 export function getOSDetails() {
   return os.type + ' ' 
     + os.arch + ' ' 
-    + os.hostname + ' ' 
-    + os.homedir + ' ' 
+    + ' | ' 
     + Math.ceil((os.totalmem - os.freemem) / 1024 / 1024/ 1024) + ' / '
     + Math.ceil(os.totalmem / 1024 / 1024/ 1024) + 'GBs';
 }
